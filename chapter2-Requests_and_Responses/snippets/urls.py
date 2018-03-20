@@ -8,11 +8,8 @@
 
 from django.urls import path
 from snippets import views
-from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('', views.snippet_list, name='snippet_list'),
     path(r'<int:pk>/', views.snippet_detail, name='snippet_detail'),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
